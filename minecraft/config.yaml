@@ -22,8 +22,8 @@ schema:
   minecraft_version: str
   server_type: str
 map:
-  - data_path:/data
-  - mods_path:/data/mods
+  - data_path: /data
+  - mods_path: /data/mods
 ports:
   25565/tcp: 25565
 ports_description:

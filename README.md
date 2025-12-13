@@ -18,10 +18,10 @@ The add-ons from this repository will now appear in your add-on store.
 
 ### Minecraft Server
 
-A Minecraft Java Edition server with Fabric mod loader support, allowing you to host a Minecraft server directly within your Home Assistant environment.
+A Minecraft Java Edition server supporting multiple server types (Vanilla, Fabric, Forge, Paper, Spigot, and more), allowing you to host a Minecraft server directly within your Home Assistant environment.
 
 **Features:**
-- Fabric mod loader support
+- Multiple server types: Vanilla, Fabric, Forge, Paper, Spigot, Purpur
 - Configurable data and mods directories
 - Customizable Java arguments
 - Version selection support
