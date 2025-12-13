@@ -1,32 +1,24 @@
 name: Minecraft Server
-version: 1.0.0
+version: 1.0.1
 slug: minecraft
 description: A Minecraft server addon with Fabric mod loader support
-url: https://github.com/itzg/docker-minecraft-server
+url: https://github.com/sr229/homeassistant-addons
 arch:
   - amd64
   - arm64
 startup: application
 boot: auto
 options:
-  data_path: /config/minecraft/data
-  mods_path: /config/minecraft/mods
-  java_args: "-Xmx4096M -Xms4096M"
+  java_memory: "4G"
   minecraft_version: "latest"
+  server_type: "FABRIC"
 schema:
-  data_path: str
-  mods_path: str
-  java_args: str
+  java_memory: str
   minecraft_version: str
-map:
-  - data_path:/data
-  - mods_path:/data/mods
+  server_type: str
 ports:
   25565/tcp: 25565
-services:
-  - network
-environment:
-  EULA: "true"
-  TYPE: FABRIC
-  JVM_OPTS: "{java_args}"
-  VERSION: "{minecraft_version}"
+map:
+  - config:data
+ports_description:
+  25565/tcp: Minecraft server port
