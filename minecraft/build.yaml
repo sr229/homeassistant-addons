@@ -1,0 +1,3 @@
+build_from:
+  amd64: "itzg/minecraft-server:latest"
+  arm64: "itzg/minecraft-server:latest"
