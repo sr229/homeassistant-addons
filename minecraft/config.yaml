@@ -6,6 +6,7 @@ url: https://github.com/sr229/homeassistant-addons
 arch:
   - amd64
   - arm64
+init: false
 startup: application
 boot: auto
 options:
