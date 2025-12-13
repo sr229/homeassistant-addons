@@ -1,5 +1,5 @@
 name: Minecraft Server
-version: 1.0.1
+version: "1.0.1"
 slug: minecraft
 description: A Minecraft server addon supporting Vanilla, Fabric, Forge, Paper, and more
 url: https://github.com/sr229/homeassistant-addons
