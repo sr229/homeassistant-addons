@@ -10,16 +10,21 @@ init: false
 startup: application
 boot: auto
 options:
-  java_memory: "4G"
+  data_path: /config/minecraft/data
+  mods_path: /config/minecraft/mods
+  java_args: "-Xmx4096M -Xms4096M"
   minecraft_version: "latest"
   server_type: "FABRIC"
 schema:
-  java_memory: str
+  data_path: str
+  mods_path: str
+  java_args: str
   minecraft_version: str
   server_type: str
+map:
+  - data_path:/data
+  - mods_path:/data/mods
 ports:
   25565/tcp: 25565
-map:
-  - config:data
 ports_description:
   25565/tcp: Minecraft server port

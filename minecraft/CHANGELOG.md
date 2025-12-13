@@ -3,20 +3,24 @@
 ## [1.0.1] - 2025-12-13
 
 ### Changed
-- Restructured as proper Home Assistant add-on
-- Simplified configuration options (java_memory, minecraft_version, server_type)
+- Restructured as proper Home Assistant add-on repository
 - Improved documentation with detailed configuration examples
 - Updated to use build.json for proper image configuration
 - Added bashio integration for better Home Assistant integration
+- Fixed shebang in run.sh to use correct interpreter
 
 ### Added
 - run.sh script for proper configuration handling
 - Support for multiple server types (VANILLA, FABRIC, FORGE, PAPER, SPIGOT, PURPUR)
-- Automatic data storage in /config/minecraft/data
+- server_type configuration option
+- Configurable data_path and mods_path for flexible storage
+- CHANGELOG.md for version tracking
+- Logo instructions
 
 ### Fixed
 - Fixed configuration mapping syntax
 - Corrected environment variable handling
+- Maintained original java_args configuration for JVM customization
 
 ## [1.0.0] - Initial Release
 

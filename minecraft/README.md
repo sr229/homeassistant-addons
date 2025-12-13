@@ -21,16 +21,32 @@ This add-on provides a Minecraft Java Edition server that runs within your Home 
 
 Configure the add-on through the Home Assistant UI with these options:
 
-### Option: `java_memory`
+### Option: `data_path`
 
-The amount of memory to allocate to the Minecraft server.
+Host path where server data will be stored (worlds, configs, etc.).
 
-**Default**: `4G`
+**Default**: `/config/minecraft/data`
+
+**Example**: `/mnt/data/minecraft`
+
+### Option: `mods_path`
+
+Host path containing mod JAR files (for Fabric/Forge) or plugin JAR files (for Paper/Spigot).
+
+**Default**: `/config/minecraft/mods`
+
+**Example**: `/mnt/data/minecraft/mods`
+
+### Option: `java_args`
+
+JVM arguments for performance tuning and memory allocation.
+
+**Default**: `-Xmx4096M -Xms4096M`
 
 **Examples**:
-- `2G` - 2 gigabytes
-- `4G` - 4 gigabytes
-- `8G` - 8 gigabytes
+- `-Xmx2048M -Xms2048M` - 2GB RAM
+- `-Xmx4096M -Xms4096M` - 4GB RAM
+- `-Xmx8192M -Xms8192M` - 8GB RAM
 
 ### Option: `minecraft_version`
 
@@ -59,22 +75,26 @@ The type of Minecraft server to run.
 
 ## Usage
 
-1. Start the add-on
-2. Wait for the server to fully initialize (check the logs)
-3. Connect to the server using your Home Assistant's IP address and port 25565
-4. Server data (worlds, configs, mods) will be stored in `/config/minecraft/data`
+1. Configure the data paths if you want to use custom locations
+2. Start the add-on
+3. Wait for the server to fully initialize (check the logs)
+4. Connect to the server using your Home Assistant's IP address and port 25565
+5. Server data (worlds, configs, etc.) will be stored in the configured `data_path`
 
 ## Adding Mods/Plugins
 
-- For **Fabric**: Place mod JAR files in `/config/minecraft/data/mods`
-- For **Forge**: Place mod JAR files in `/config/minecraft/data/mods`
-- For **Paper/Spigot**: Place plugin JAR files in `/config/minecraft/data/plugins`
+- For **Fabric**: Place mod JAR files in the directory specified by `mods_path`
+- For **Forge**: Place mod JAR files in the directory specified by `mods_path`
+- For **Paper/Spigot**: Place plugin JAR files in `data_path/plugins`
+
+**Note**: The `mods_path` is specifically for Fabric/Forge mods. For Paper/Spigot plugins, use the `plugins` subdirectory within your `data_path`.
 
 ## Notes
 
 - The add-on uses the excellent [itzg/minecraft-server](https://github.com/itzg/docker-minecraft-server) Docker image
-- Server properties can be customized by editing `/config/minecraft/data/server.properties`
+- Server properties can be customized by editing `server.properties` in your configured `data_path`
 - The EULA is automatically accepted by using this add-on
+- Ensure the configured paths have appropriate permissions for the add-on to read/write
 - Make sure your Home Assistant host has enough resources (CPU, RAM, disk space)
 
 ## Support
