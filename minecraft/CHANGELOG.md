@@ -6,8 +6,7 @@
 - Restructured as proper Home Assistant add-on repository
 - Improved documentation with detailed configuration examples
 - Updated to use build.json for proper image configuration
-- Added bashio integration for better Home Assistant integration
-- Fixed shebang in run.sh to use correct interpreter
+- Added bashio integration with fallback support for better compatibility
 
 ### Added
 - run.sh script for proper configuration handling
