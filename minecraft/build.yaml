@@ -1,3 +1,8 @@
 build_from:
-  amd64: "itzg/minecraft-server:latest"
-  arm64: "itzg/minecraft-server:latest"
+  amd64: "docker.io/itzg/minecraft-server:java25-jdk"
+  arm64: "docker.io/itzg/minecraft-server:java25-jdk"
+labels:
+  org.opencontainers.image.title: "Home Assistant Add-on: Minecraft Server"
+  org.opencontainers.image.description: "A cutomizable Minecraft server based on itzg/minecraft-server"
+  org.opencontainers.image.source: "https://github.com/sr229/homeassistant-addons"
+  org.opencontainers.image.licenses: "MIT License"

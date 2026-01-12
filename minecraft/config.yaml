@@ -12,7 +12,7 @@ boot: auto
 options:
   data_path: /config/minecraft/data
   mods_path: /config/minecraft/mods
-  java_args: "-Xmx4096M -Xms4096M"
+  java_args: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch"
   minecraft_version: "latest"
   server_type: "FABRIC"
 schema:
