@@ -10,20 +10,17 @@ init: false
 startup: application
 boot: auto
 options:
-  data_path: /config/minecraft/data
-  mods_path: /config/minecraft/mods
+  data_path: /share/minecraft
   java_args: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch"
-  minecraft_version: "latest"
+  minecraft_version: "1.20.1"
   server_type: "FABRIC"
 schema:
   data_path: str
-  mods_path: str
   java_args: str
   minecraft_version: str
   server_type: str
 map:
   - data_path: /data
-  - mods_path: /data/mods
 ports:
   25565/tcp: 25565
 ports_description:
